@@ -1,0 +1,194 @@
+﻿{% load staticfiles %}<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/html"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+     <meta charset="utf-8">
+    <title>pythoner梦想|博客</title>
+    <meta name="uyan_auth" content="6802bc874d"/>
+    <meta name="baidu-site-verification" content="xGxm0MFUP4"/>
+    <meta name="description"
+          content="pythoner梦想 梦想博客 pyther博客">
+    <meta name="author" content="pythoner.55555.io">
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsiveslides.css' %}"/>
+
+    <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="{% static 'js/html5.js'%}"></script>
+		<script src="{% static 'js/css3-mediaqueries.js' %}"></script>
+	<![endif]-->
+
+    <link href="{% static './images/favicon.ico' %}" rel='icon' type='image/x-icon'/>
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/responsiveslides.js" %}"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                maxwidth: 960,
+                namespace: "centered-btns"
+            });
+        });
+    </script>
+
+</head>
+<body>
+<!--------------Header--------------->
+<header>
+    <div id="logo"><a href="#"><img src="{% static "images/logo.png" %}"/></a></div>
+    <div id="search">
+        <script type="text/javascript">(function () {
+            document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
+            var bdcs = document.createElement('script');
+            bdcs.type = 'text/javascript';
+            bdcs.async = true;
+            bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10415218712964354739' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date() / 3600000);
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(bdcs, s);
+        })();</script>
+    </div>
+</header>
+
+<!--------------Navigation--------------->
+
+<nav>
+    <ul>
+        <li><a href={% url 'index2' %}>爱主页</a></li>
+        <li><a href={% url 'blog' %}>爱博客</a></li>
+        <li><a href={% url 'gallery' %}>爱画廊</a></li>
+        <li><a href={% url 'about' %}>关于我</a></li>
+        <li><a href={% url 'message' %}>联系我</a></li>
+    </ul>
+</nav>
+<!--------------Slideshow--------------->
+
+<section class="featured">
+    <div class="rslides_container">
+        <ul class="rslides" id="slider">
+            <li><img src="http://mzmsecond.oss-cn-beijing.aliyuncs.com/images/slide1.png"/></li>
+            <li><img src="http://mzmsecond.oss-cn-beijing.aliyuncs.com/images/slide2.png"/></li>
+            <li><img src="http://mzmsecond.oss-cn-beijing.aliyuncs.com/images/slide3.png"/></li>
+            <li><img src="http://mzmsecond.oss-cn-beijing.aliyuncs.com/images/slide4.png"/></li>
+        </ul>
+    </div>
+</section>
+
+<!--------------Content--------------->
+<section id="content">
+    <div class="zerogrid">
+        <div class="row">
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-1-3">
+                        <section>
+                            <div class="heading">
+                                <h2><a href="blog.html">我的技能</a></h2>
+                            </div>
+                            <div class="content">
+                                <a href="{% url 'about' %}"><img src="{% static "images/icon1.jpg" %}"/></a>
+                                <p>两年的工作经验，让我积累了一些技能，下面就点击上边的图标看一下吧！</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-1-3">
+                        <section>
+                            <div class="heading">
+                                <h2><a href="https://github.com/mzm5466">项目博客</a></h2>
+                            </div>
+                            <div class="content">
+                                <a href="https://github.com/mzm5466"><img src="{% static "images/icon2.jpg" %}"/></a>
+                                <a href="https://github.com/mzm5466"><p>博客，在于点滴积累，技术之间，你与我的心灵交互！</p></a>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-1-3">
+                        <section>
+                            <div class="heading">
+                                <h2><a href="blog.html">个人介绍</a></h2>
+                            </div>
+                            <div class="content">
+                                <img src="{% static "images/icon3.jpg" %}"/>
+                                <p>我的梦想近在咫尺，又因努力让我更加接近我的梦想！</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-2-3">
+                        <article>
+                            <div class="heading">
+                                <h2><a href="blog.html">Welcome to Our Company</a></h2>
+                            </div>
+                            <div class="content">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                    architecto beatae vitae dicta sunt explicabo.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
+                                    quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+                                    sed quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                                    velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+                                    aliquam quaerat voluptatem.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="sidebar col-1-3">
+                        <section class="">
+                            <div class="heading">最新文章</div>
+                            <div class="content">
+                                <ul>
+                                    {% for top in top3%}
+                                        <li>
+                                            <a href="app/single/{{ top.id }}">{{ top.title }}<p>{{ top.createtime }}</p></a>
+                                        </li>
+                                        {% empty %}
+                                        暂无文章！
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------Footer--------------->
+{% include "footer.html" %}
+</body>
+<script type="text/javascript">(function () {
+    document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
+    var bdcs = document.createElement('script');
+    bdcs.type = 'text/javascript';
+    bdcs.async = true;
+    bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10415218712964354739' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date() / 3600000);
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(bdcs, s);
+})();</script>
+</html>

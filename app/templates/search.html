@@ -1,0 +1,148 @@
+﻿{% load staticfiles %}<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta charset="utf-8">
+    <title>python梦想的博客</title>
+    <meta name="description"
+          content="Free Html5 Templates and Free Responsive Themes Designed by Kimmy | zerotheme.com">
+    <meta name="author" content="www.zerotheme.com">
+
+    <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+  ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/zerogrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsiveslides.css' %}"/>
+
+    <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="{% static 'js/html5.js'%}"></script>
+		<script src="{% static 'js/css3-mediaqueries.js' %}"></script>
+	<![endif]-->
+
+    <link href="{% static './images/favicon.ico' %}" rel='icon' type='image/x-icon'/>
+
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/responsiveslides.js" %}"></script>
+    <script>
+{#        alert(1);#}
+{#        var str = '{{ list_detail.content }}';#}
+{#        var div = document.createElement('div');#}
+{#        div.innerHTML = str;#}
+{#        var span = div.childNodes;#}
+{#        var body = document.getElementsByTagName('body')[0];#}
+{#        alert(span[0].valueOf());#}
+    </script>
+</head>
+<body>
+<!--------------Header--------------->
+<header>
+    <div id="logo"><a href=""><img src={% static "./images/logo.png" %}/></a></div>
+    <div id="search">
+        <div class="button-search"></div>
+        <input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}"
+               onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+    </div>
+</header>
+
+<!--------------Navigation--------------->
+
+<nav>
+    <ul>
+        <li><a href={% url 'index2' %}>爱主页</a></li>
+        <li><a href={% url 'blog' %}>爱博客</a></li>
+        <li><a href={% url 'gallery' %}>爱画廊</a></li>
+        <li><a href={% url 'about' %}>关于我</a></li>
+        <li><a href={% url 'message' %}>联系我</a></li>
+    </ul>
+</nav>
+<!--------------Content--------------->
+<section id="content">
+    <div class="zerogrid">
+        <div class="row">
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-2-3">
+                        <article>
+                            <div class="heading">
+                                <h2><a href="#">{{ list_detail.title }}</a></h2>
+                                <p class="info">{{ list_detail.createtime }}</p>
+                            </div>
+                            <div class="content">
+                                <img src="{% static "images/img1.jpg" %}"/>
+                                <div id="decode" style="display:none;">{{ list_detail.content }}</div>
+                                <div id="decode2" style="display: inline-block"></div>
+                            </div>
+                            <div class="footer">
+                            </div>
+                        </article>
+                    </div>
+                    <div class="sidebar col-1-3">
+                        <section>
+                            <div class="heading">About us</div>
+                            <div class="content">
+                                Free Basic Html5 Templates created More Templates <a
+                                    href="http://www.cssmoban.com">模板之家</a>. You can use and modify the template for
+                                both personal and commercial use. You must keep all copyright information and credit
+                                links in the template and associated files.
+                            </div>
+                        </section>
+                        <section>
+                            <div class="heading">Categories</div>
+                            <div class="content">
+                                <ul>
+                                    <li><a href="http://www.cssmoban.com">Free Html5 Templates</a></li>
+                                    <li><a href="http://www.cssmoban.com">Free Css3 Templates</a></li>
+                                    <li><a href="http://www.cssmoban.com">Free Responsive Html5 Templates</a></li>
+                                    <li><a href="http://www.cssmoban.com">Free Basic Html5 Templates</a></li>
+                                    <li><a href="http://www.cssmoban.com">Free Layout Html5 Templates</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="heading">Flickr Photos</div>
+                            <div class="content">
+                                <table border="0px">
+                                    <tr>
+                                        <td><img src="images/f1.jpg"/></td>
+                                        <td><img src="images/f2.jpg"/></td>
+                                        <td><img src="images/f3.jpg"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/f4.jpg"/></td>
+                                        <td><img src="images/f5.jpg"/></td>
+                                        <td><img src="images/f6.jpg"/></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------Footer--------------->
+{% include "footer.html" %}</body>
+<script>
+    var a=$("#decode").text();
+    $("#decode2").append(a);
+</script>
+</html>

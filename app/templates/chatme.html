@@ -1,0 +1,51 @@
+﻿{% include "header.html" %}
+{% load staticfiles %}
+<style>
+    form label {
+        color: mediumorchid;
+        font-size: 20px;
+    }
+
+    form {
+        border: peru solid 2px;
+    }
+
+    form p {
+        border: mediumorchid solid 1px;
+    }
+
+    #id_content {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<!--------------Content--------------->
+<section id="content">
+    <div class="zerogrid">
+        <div class="row">
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-2-3">
+                        <article>
+                            <form action="/contactUs/email_input/" method="post">
+                                <fieldset>
+                                    <legend>请输入并提交</legend>
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" value="发送邮件"/>
+                                </fieldset>
+                            </form>
+                        </article>
+                    </div>
+                    <div class="sidebar col-1-3">
+                        {% include 'sloiderbar.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------Footer--------------->
+{% include "footer.html" %}
+</body>
+</html>

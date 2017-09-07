@@ -1,0 +1,27 @@
+<section>
+    <div class="heading">最新文章</div>
+    <div class="content">
+        <ul>
+            {% for top in top3 %}
+                <li>
+                    <a href="app/single/{{ top.id }}">{{ top.title }}<p style="float: right;">{{ top.createtime }}</p>
+                    </a>
+                </li>
+            {% empty %}
+                暂无文章！
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<section>
+    <div class="heading">文章归档</div>
+    <div class="content">
+
+    </div>
+</section>
+<section>
+    <div class="heading">文章分类</div>
+    <div class="content">
+        <p>人生苦短，我用python</p>
+    </div>
+</section>

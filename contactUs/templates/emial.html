@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消息录入</title>
+    <style>
+        form label {
+            color: mediumorchid;
+            font-size: 20px;
+        }
+
+        form {
+            border: peru solid 2px;
+        }
+    </style>
+
+</head>
+<body>
+<form action="/contactUs/email_input/" method="post">
+    <fieldset>
+        <legend>请输入并提交</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="发送留言"/>
+    </fieldset>
+</form>
+</body>
+</html>

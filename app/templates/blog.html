@@ -1,0 +1,50 @@
+﻿{% include "header.html" %}
+{% load staticfiles %}
+<!--------------Content--------------->
+<section id="content">
+    <div class="zerogrid">
+        <div class="row">
+            <div class="main-content">
+                <div class="row">
+                    {% for list in lists %}
+                        <div class="col-2-3">
+                        <article>
+                            <div class="heading">
+                                <h2><a href="/app/single/{{ list.id }}">{{ list.title }}</a>&nbsp;&nbsp;<span
+                                        style="font-size: 14px;float: right;">{{ list.createtime }}</span></h2>
+                                <p class="info2" style="font-family: 微软雅黑">作者：{{ list.user_name }}</p>
+                            </div>
+                            <div class="content">
+                                <img src="{% static "images/img1.jpg" %}"/>
+                                <div id="decode" style="display:inline-block;">{{ list.shortcontent }}</div>
+                            </div>
+                            <div class="footer">
+                                <p class="more"><a class="button" href="/app/single/{{ list.id }}">Read more >></a>
+                                </p>
+                            </div>
+                        </article>
+                    {% endfor %}
+                    {% if lists.has_previous %}
+                        <a class='paginator' title='上一页'
+                           href='?page={{ lists.previous_page_number }}'><span>&lt;&lt;</span></a>
+                    {% endif %}
+                    {% for page in lists.paginator.page_range %}
+                        {% if page = page.number %}
+                            <a class='paginator_current' title='当前页:{{ page }}'><span>{{ page }}</span></a>
+                        {% else %}
+                            <a class='paginator' href='?page={{ page }}' title='{{ page }}'><span>{{ page }}</span></a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if lists.has_next %}
+                        <a class='paginator' title='下一页' href='?page={{ lists.next_page_number }}'><span>&gt;&gt;</span></a>
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--------------Footer--------------->
+{% include "footer.html" %}
+</body>
+</html>
