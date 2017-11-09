@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 from django.conf.urls import url
 from . import views
-from minicms import settings
+from blog import settings
 
 urlpatterns = [
     url(r'moments_input', views.moments_input),
@@ -15,7 +15,6 @@ urlpatterns = [
     url(r'^header/$',views.header,name="header"),
     url(r'^message/$',views.message,name="message"),
     url(r'^sloiderbar/$',views.sloiderbar,name='sloiderbar'),
-    # url(r'^search_article/$',views.search_article,name="search_article"),
     url(r'^search_article/$', views.search_article, name='search_article'),
     url( r'^static/(?P<path>.*)$', 'django.views.static.serve',{ 'document_root': settings.STATIC_URL }),
 ]

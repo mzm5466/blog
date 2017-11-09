@@ -18,8 +18,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from DjangoUeditor import urls as DjangoUeditor_urls
 import app.urls
+import monitor.urls
 from app import views
-from minicms import settings
+from blog import settings
 import contactUs.urls
 
 from django.contrib.auth import urls as auth_urls
@@ -31,6 +32,7 @@ urlpatterns = [
     url(r'^app/',include(app.urls)),
     url(r'^contactUs/',include(contactUs.urls)),
     url(r'^upload/upload/images/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT}),
+    url(r'^monitor/' ,include(monitor.urls)),
 ]
 
 

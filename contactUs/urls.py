@@ -2,7 +2,7 @@
 #-*- coding:utf-8 -*-
 from django.conf.urls import url
 from . import views
-from minicms import settings
+from blog import settings
 
 urlpatterns = [
     url(r'^email/$',views.email,name="email"),
