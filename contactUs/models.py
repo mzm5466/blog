@@ -19,3 +19,19 @@ class Email(models.Model):
         verbose_name = '博客留言'
         verbose_name_plural = '博客留言'
         ordering = ['-createtime']
+
+class ErrorLog(models.Model):
+    scriptURI = models.CharField(verbose_name=u'出错文件', max_length=1000,null=False, )
+    errorMessage =  models.TextField(verbose_name=u'错误信息',max_length=1000,null=False,)
+    lineNumber = models.CharField(verbose_name=u'出错行号', max_length=20,null=False,)
+    columnNumber = models.CharField(verbose_name=u'出错列号', max_length=20,null=False,)
+    errorObj=models.TextField(verbose_name=u'错误详情', max_length=2000,null=False, )
+    createtime = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):  # 在Python3中用 __str__ 代替 __unicode__
+        return str(self.id)
+
+    class Meta:
+        verbose_name = '报错信息'
+        verbose_name_plural = '报错信息'
+        ordering = ['-createtime']
